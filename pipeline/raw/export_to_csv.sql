@@ -1,0 +1,2 @@
+COPY (SELECT order_id, customer_id, product_id, order_date, quantity, unit_price, order_status, shipping_city FROM raw.src_orders) TO 'C:/Projects/Medallion_Project/pipeline/raw/src_orders_csv.csv' WITH (FORMAT CSV, HEADER);
+COPY (SELECT customer_id, first_name, last_name, email, phone, country, city, signup_date, customer_segment, loyalty_points FROM raw.src_customers) TO 'C:/Projects/Medallion_Project/pipeline/raw/src_customers_csv.csv' WITH (FORMAT CSV, HEADER);
